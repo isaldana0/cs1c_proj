@@ -7,19 +7,18 @@ using namespace std;
 // thinking two classes. One called Members and a child class called Executive. Which will inherit from the parent class 'Members'
 class Members {
     public:
-    // Constructor - takes 5 arguments. Initilize to default values
-    Members(string n = " ", int num = 000000, string mtype =" ", string exp, double t = 0.0, double rb)
+    // Constructor - takes arguments. Initilize to default values
+    Members(const string &n = " ", int num = 000000, const string &mtype =" ", const string &exp, double t = 0.0, double rb)
         : name(n),
             membershipNumber(num),
             membershipType(mtype),
             expirationDate(exp),
             amountSpent(t), 
             rebate(rb) {};
-
+    // Deconstructor 
     ~Members();
-    // insert methods here
+     
 
-    // prints out
     friend ostream& operator<<(ostream& os, const Members& member);
 
     private:
