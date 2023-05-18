@@ -1,5 +1,4 @@
-#ifndef LOGINWINDOW_H
-#define LOGINWINDOW_H
+// LoginWindow.h
 
 #include <QMainWindow>
 #include <QPushButton>
@@ -13,6 +12,9 @@ class LoginWindow : public QMainWindow
 public:
     LoginWindow(QWidget *parent = nullptr);
 
+signals:
+    void loginSuccessful();
+
 private slots:
     void login();
 
@@ -23,5 +25,3 @@ private:
 
     // Other GUI elements and widgets
 };
-
-#endif // LOGINWINDOW_H

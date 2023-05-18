@@ -1,4 +1,5 @@
 #include "LoginWindow.h"
+#include "ui_LoginWindow.h"
 
 LoginWindow::LoginWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -27,12 +28,12 @@ void LoginWindow::login()
     if (username == "admin" && password == "admin1")
     {
         qDebug() << "Admin login successful";
-        // Perform actions for admin user
+        emit loginSuccessful(); // Emit loginSuccessful signal upon successful login
     }
     else if (username == "manager" && password == "manager1")
     {
         qDebug() << "Manager login successful";
-        // Perform actions for manager user
+        emit loginSuccessful(); // Emit loginSuccessful signal upon successful login
     }
     else
     {
