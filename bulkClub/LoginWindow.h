@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QDebug>
+#include "ui_LoginWindow.h"
 
 class LoginWindow : public QMainWindow
 {
@@ -19,9 +20,5 @@ private slots:
     void login();
 
 private:
-    QLineEdit* usernameLineEdit;
-    QLineEdit* passwordLineEdit;
-    QPushButton* loginButton;
-
-    // Other GUI elements and widgets
+    Ui::LoginWindow ui; // Use the generated UI class as a member variable
 };
