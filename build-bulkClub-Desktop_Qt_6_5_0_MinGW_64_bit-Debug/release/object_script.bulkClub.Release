@@ -1,7 +1,7 @@
+release/login.o
 release/Employee.o
 release/datawarehouse.o
 release/item.o
-release/login.o
 release/main.o
 release/mainwindow.o
 release/member.o
