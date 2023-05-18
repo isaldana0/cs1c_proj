@@ -18,72 +18,72 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_login
+class Ui_Form
 {
 public:
+    QPushButton *pushButton_cancel;
     QPushButton *pushButton_login;
     QLineEdit *lineEdit_username;
-    QPushButton *pushButton_cancel;
-    QLineEdit *lineEdit_password;
-    QLabel *label;
     QLabel *label_2;
+    QLabel *label;
+    QLineEdit *lineEdit_password;
 
-    void setupUi(QWidget *login)
+    void setupUi(QWidget *Form)
     {
-        if (login->objectName().isEmpty())
-            login->setObjectName("login");
-        login->resize(981, 608);
-        pushButton_login = new QPushButton(login);
-        pushButton_login->setObjectName("pushButton_login");
-        pushButton_login->setGeometry(QRect(290, 330, 161, 71));
+        if (Form->objectName().isEmpty())
+            Form->setObjectName("Form");
+        Form->resize(830, 525);
+        pushButton_cancel = new QPushButton(Form);
+        pushButton_cancel->setObjectName("pushButton_cancel");
+        pushButton_cancel->setGeometry(QRect(450, 270, 161, 71));
         QFont font;
         font.setPointSize(20);
         font.setBold(true);
+        pushButton_cancel->setFont(font);
+        pushButton_login = new QPushButton(Form);
+        pushButton_login->setObjectName("pushButton_login");
+        pushButton_login->setGeometry(QRect(260, 270, 161, 71));
         pushButton_login->setFont(font);
-        lineEdit_username = new QLineEdit(login);
+        lineEdit_username = new QLineEdit(Form);
         lineEdit_username->setObjectName("lineEdit_username");
-        lineEdit_username->setGeometry(QRect(370, 200, 300, 35));
+        lineEdit_username->setGeometry(QRect(340, 140, 300, 35));
         QFont font1;
         font1.setPointSize(15);
         font1.setBold(true);
         lineEdit_username->setFont(font1);
-        pushButton_cancel = new QPushButton(login);
-        pushButton_cancel->setObjectName("pushButton_cancel");
-        pushButton_cancel->setGeometry(QRect(480, 330, 161, 71));
-        pushButton_cancel->setFont(font);
-        lineEdit_password = new QLineEdit(login);
-        lineEdit_password->setObjectName("lineEdit_password");
-        lineEdit_password->setGeometry(QRect(370, 250, 300, 35));
-        lineEdit_password->setFont(font1);
-        lineEdit_password->setEchoMode(QLineEdit::Password);
-        label = new QLabel(login);
-        label->setObjectName("label");
-        label->setGeometry(QRect(220, 200, 151, 31));
-        label->setFont(font);
-        label_2 = new QLabel(login);
+        label_2 = new QLabel(Form);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(210, 250, 151, 31));
+        label_2->setGeometry(QRect(180, 190, 151, 31));
         label_2->setFont(font);
         label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        label = new QLabel(Form);
+        label->setObjectName("label");
+        label->setGeometry(QRect(190, 140, 151, 31));
+        label->setFont(font);
+        lineEdit_password = new QLineEdit(Form);
+        lineEdit_password->setObjectName("lineEdit_password");
+        lineEdit_password->setGeometry(QRect(340, 190, 300, 35));
+        lineEdit_password->setFont(font1);
+        lineEdit_password->setEchoMode(QLineEdit::Password);
 
-        retranslateUi(login);
+        retranslateUi(Form);
 
-        QMetaObject::connectSlotsByName(login);
+        QMetaObject::connectSlotsByName(Form);
     } // setupUi
 
-    void retranslateUi(QWidget *login)
+    void retranslateUi(QWidget *Form)
     {
-        login->setWindowTitle(QCoreApplication::translate("login", "Form", nullptr));
-        pushButton_login->setText(QCoreApplication::translate("login", "Login", nullptr));
-        pushButton_cancel->setText(QCoreApplication::translate("login", "Cancel", nullptr));
-        label->setText(QCoreApplication::translate("login", "Username:", nullptr));
-        label_2->setText(QCoreApplication::translate("login", "Password:", nullptr));
+        Form->setWindowTitle(QCoreApplication::translate("Form", "Form", nullptr));
+        pushButton_cancel->setText(QCoreApplication::translate("Form", "Cancel", nullptr));
+        pushButton_login->setText(QCoreApplication::translate("Form", "Login", nullptr));
+        label_2->setText(QCoreApplication::translate("Form", "Password:", nullptr));
+        label->setText(QCoreApplication::translate("Form", "Username:", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class login: public Ui_login {};
+    class Form: public Ui_Form {};
 } // namespace Ui
 
 QT_END_NAMESPACE

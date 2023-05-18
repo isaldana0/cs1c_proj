@@ -7,7 +7,6 @@
 *****************************************************************************/
 
 #include "../../bulkClub/login.h"
-#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
 #if __has_include(<QtCore/qtmochelpers.h>)
@@ -37,40 +36,40 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSLoginENDCLASS_t {};
-static constexpr auto qt_meta_stringdata_CLASSLoginENDCLASS = QtMocHelpers::stringData(
-    "Login",
-    "loginSuccessful",
+struct qt_meta_stringdata_CLASSloginENDCLASS_t {};
+static constexpr auto qt_meta_stringdata_CLASSloginENDCLASS = QtMocHelpers::stringData(
+    "login",
+    "on_pushButton_login_clicked",
     "",
-    "login"
+    "on_pushButton_cancel_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASSLoginENDCLASS_t {
+struct qt_meta_stringdata_CLASSloginENDCLASS_t {
     uint offsetsAndSizes[8];
     char stringdata0[6];
-    char stringdata1[16];
+    char stringdata1[28];
     char stringdata2[1];
-    char stringdata3[6];
+    char stringdata3[29];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASSLoginENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASSLoginENDCLASS_t qt_meta_stringdata_CLASSLoginENDCLASS = {
+    uint(sizeof(qt_meta_stringdata_CLASSloginENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASSloginENDCLASS_t qt_meta_stringdata_CLASSloginENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 5),  // "Login"
-        QT_MOC_LITERAL(6, 15),  // "loginSuccessful"
-        QT_MOC_LITERAL(22, 0),  // ""
-        QT_MOC_LITERAL(23, 5)   // "login"
+        QT_MOC_LITERAL(0, 5),  // "login"
+        QT_MOC_LITERAL(6, 27),  // "on_pushButton_login_clicked"
+        QT_MOC_LITERAL(34, 0),  // ""
+        QT_MOC_LITERAL(35, 28)   // "on_pushButton_cancel_clicked"
     },
-    "Login",
-    "loginSuccessful",
+    "login",
+    "on_pushButton_login_clicked",
     "",
-    "login"
+    "on_pushButton_cancel_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSLoginENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSloginENDCLASS[] = {
 
  // content:
       11,       // revision
@@ -81,77 +80,64 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSLoginENDCLASS[] = {
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
-
- // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   26,    2, 0x06,    1 /* Public */,
+       0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    0,   26,    2, 0x08,    1 /* Private */,
        3,    0,   27,    2, 0x08,    2 /* Private */,
 
- // signals: parameters
-    QMetaType::Void,
-
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject Login::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject login::staticMetaObject = { {
     QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
-    qt_meta_stringdata_CLASSLoginENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSLoginENDCLASS,
+    qt_meta_stringdata_CLASSloginENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSloginENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSLoginENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSloginENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<Login, std::true_type>,
-        // method 'loginSuccessful'
+        QtPrivate::TypeAndForceComplete<login, std::true_type>,
+        // method 'on_pushButton_login_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'login'
+        // method 'on_pushButton_cancel_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
 
-void Login::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void login::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<Login *>(_o);
+        auto *_t = static_cast<login *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->loginSuccessful(); break;
-        case 1: _t->login(); break;
+        case 0: _t->on_pushButton_login_clicked(); break;
+        case 1: _t->on_pushButton_cancel_clicked(); break;
         default: ;
-        }
-    } else if (_c == QMetaObject::IndexOfMethod) {
-        int *result = reinterpret_cast<int *>(_a[0]);
-        {
-            using _t = void (Login::*)();
-            if (_t _q_method = &Login::loginSuccessful; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
-                *result = 0;
-                return;
-            }
         }
     }
     (void)_a;
 }
 
-const QMetaObject *Login::metaObject() const
+const QMetaObject *login::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Login::qt_metacast(const char *_clname)
+void *login::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSLoginENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSloginENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QMainWindow::qt_metacast(_clname);
 }
 
-int Login::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int login::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)
@@ -166,11 +152,5 @@ int Login::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 2;
     }
     return _id;
-}
-
-// SIGNAL 0
-void Login::loginSuccessful()
-{
-    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 QT_WARNING_POP
