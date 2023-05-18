@@ -11,7 +11,6 @@ CONFIG += c++17
 SOURCES += \
     datawarehouse.cpp \
     item.cpp \
-    login.cpp \
     main.cpp \
     mainwindow.cpp \
     member.cpp \
@@ -22,13 +21,11 @@ HEADERS += \
     datawarehouse.h \
     employee.h \
     item.h \
-    login.h \
     mainwindow.h \
     member.h \
     transaction.h
 
 FORMS += \
-    login.ui \
     mainwindow.ui
 
 # Default rules for deployment.

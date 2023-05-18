@@ -1,12 +1,13 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'LoginWindow.h'
+** Meta object code from reading C++ file 'login.h'
 **
 ** Created by: The Qt Meta Object Compiler version 68 (Qt 6.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../bulkClub/LoginWindow.h"
+#include "../../bulkClub/login.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
 #if __has_include(<QtCore/qtmochelpers.h>)
@@ -19,7 +20,7 @@ QT_BEGIN_MOC_NAMESPACE
 #include <memory>
 
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'LoginWindow.h' doesn't include <QObject>."
+#error "The header file 'login.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
 #error "This file was generated using the moc from 6.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -36,31 +37,31 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSLoginWindowENDCLASS_t {};
-static constexpr auto qt_meta_stringdata_CLASSLoginWindowENDCLASS = QtMocHelpers::stringData(
-    "LoginWindow",
+struct qt_meta_stringdata_CLASSLoginENDCLASS_t {};
+static constexpr auto qt_meta_stringdata_CLASSLoginENDCLASS = QtMocHelpers::stringData(
+    "Login",
     "loginSuccessful",
     "",
     "login"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASSLoginWindowENDCLASS_t {
+struct qt_meta_stringdata_CLASSLoginENDCLASS_t {
     uint offsetsAndSizes[8];
-    char stringdata0[12];
+    char stringdata0[6];
     char stringdata1[16];
     char stringdata2[1];
     char stringdata3[6];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASSLoginWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASSLoginWindowENDCLASS_t qt_meta_stringdata_CLASSLoginWindowENDCLASS = {
+    uint(sizeof(qt_meta_stringdata_CLASSLoginENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASSLoginENDCLASS_t qt_meta_stringdata_CLASSLoginENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 11),  // "LoginWindow"
-        QT_MOC_LITERAL(12, 15),  // "loginSuccessful"
-        QT_MOC_LITERAL(28, 0),  // ""
-        QT_MOC_LITERAL(29, 5)   // "login"
+        QT_MOC_LITERAL(0, 5),  // "Login"
+        QT_MOC_LITERAL(6, 15),  // "loginSuccessful"
+        QT_MOC_LITERAL(22, 0),  // ""
+        QT_MOC_LITERAL(23, 5)   // "login"
     },
-    "LoginWindow",
+    "Login",
     "loginSuccessful",
     "",
     "login"
@@ -69,7 +70,7 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSLoginWindowENDCLASS_t qt_meta_s
 #endif // !QT_MOC_HAS_STRING_DATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSLoginWindowENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSLoginENDCLASS[] = {
 
  // content:
       11,       // revision
@@ -97,15 +98,15 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSLoginWindowENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject LoginWindow::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject Login::staticMetaObject = { {
     QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
-    qt_meta_stringdata_CLASSLoginWindowENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSLoginWindowENDCLASS,
+    qt_meta_stringdata_CLASSLoginENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSLoginENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSLoginWindowENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSLoginENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<LoginWindow, std::true_type>,
+        QtPrivate::TypeAndForceComplete<Login, std::true_type>,
         // method 'loginSuccessful'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'login'
@@ -114,10 +115,10 @@ Q_CONSTINIT const QMetaObject LoginWindow::staticMetaObject = { {
     nullptr
 } };
 
-void LoginWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void Login::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<LoginWindow *>(_o);
+        auto *_t = static_cast<Login *>(_o);
         (void)_t;
         switch (_id) {
         case 0: _t->loginSuccessful(); break;
@@ -127,8 +128,8 @@ void LoginWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (LoginWindow::*)();
-            if (_t _q_method = &LoginWindow::loginSuccessful; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            using _t = void (Login::*)();
+            if (_t _q_method = &Login::loginSuccessful; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
@@ -137,20 +138,20 @@ void LoginWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     (void)_a;
 }
 
-const QMetaObject *LoginWindow::metaObject() const
+const QMetaObject *Login::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *LoginWindow::qt_metacast(const char *_clname)
+void *Login::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSLoginWindowENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSLoginENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QMainWindow::qt_metacast(_clname);
 }
 
-int LoginWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int Login::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)
@@ -168,7 +169,7 @@ int LoginWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void LoginWindow::loginSuccessful()
+void Login::loginSuccessful()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
