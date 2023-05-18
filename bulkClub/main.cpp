@@ -1,20 +1,21 @@
 #include <QApplication>
-#include "LoginWindow.h"
+#include "login.h"
 #include "MainWindow.h"
+#include "login.h"
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    LoginWindow loginWindow;
+    login login;
     MainWindow mainWindow;
 
-    QObject::connect(&loginWindow, &LoginWindow::loginSuccessful, [&loginWindow, &mainWindow]() {
-        loginWindow.hide();
+    QObject::connect(&login, &login::loginSuccessful, [&login, &mainWindow]() {
+        login.hide();
         mainWindow.show();
     });
 
-    loginWindow.show();
+    login.show();
 
     return app.exec();
 }
