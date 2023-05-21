@@ -15,22 +15,32 @@ MainWindow::MainWindow(EmployeeType role, QWidget *parent)
     movie->start();
 
     if (role == EmployeeType::Admin) {
-        //enable admin-specific GUI elements
+        // Enable admin-specific GUI elements
         ui->pushButton_searchSalesReport->setEnabled(true);
         ui->pushButton_salesReportMemberTypeDisplay->setEnabled(true);
         ui->pushButton_itemSold->setEnabled(true);
         ui->pushButton_totalRevenueTax->setEnabled(true);
         ui->pushButton_memberShoppingDataSearch->setEnabled(true);
         ui->pushButton_memberType->setEnabled(true);
+        ui->pushButton_itemAddDelete->setEnabled(true);
+        ui->pushButton_memberAddDelete->setEnabled(true);
+        ui->pushButton_memberRebateDisplay->setEnabled(true);
+        ui->pushButton_memberExpSearch->setEnabled(true);
+        ui->pushButton_inventorySearch->setEnabled(true);
     }
     else {
-        //disable admin-specific GUI elements
-        ui->pushButton_searchSalesReport->setEnabled(false);
-        ui->pushButton_salesReportMemberTypeDisplay->setEnabled(false);
-        ui->pushButton_itemSold->setEnabled(false);
-        ui->pushButton_totalRevenueTax->setEnabled(false);
-        ui->pushButton_memberShoppingDataSearch->setEnabled(false);
-        ui->pushButton_memberType->setEnabled(false);
+        // Disable admin-specific GUI elements
+        ui->pushButton_searchSalesReport->setEnabled(true);
+        ui->pushButton_salesReportMemberTypeDisplay->setEnabled(true);
+        ui->pushButton_itemSold->setEnabled(true);
+        ui->pushButton_totalRevenueTax->setEnabled(true);
+        ui->pushButton_memberShoppingDataSearch->setEnabled(true);
+        ui->pushButton_memberType->setEnabled(true);
+        ui->pushButton_itemAddDelete->setEnabled(false);
+        ui->pushButton_memberAddDelete->setEnabled(false);
+        ui->pushButton_memberRebateDisplay->setEnabled(true);
+        ui->pushButton_memberExpSearch->setEnabled(true);
+        ui->pushButton_inventorySearch->setEnabled(true);
     }
 }
 
@@ -42,66 +52,66 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_searchSalesReport_clicked()
 {
-
+    // manager function
 }
 
 
 void MainWindow::on_pushButton_salesReportMemberTypeDisplay_clicked()
 {
-
+    // manager function
 }
 
 
 void MainWindow::on_pushButton_itemSold_clicked()
 {
-
+    // manager function
 }
 
 
 void MainWindow::on_pushButton_totalRevenueTax_clicked()
 {
-
+    // manager function
 }
 
 
 void MainWindow::on_pushButton_memberShoppingDataSearch_clicked()
 {
-
+    // manager function
 }
 
 
 void MainWindow::on_pushButton_memberType_clicked()
 {
-
+    // manager function
 }
 
 
 void MainWindow::on_pushButton_itemAddDelete_clicked()
 {
-
+    // ADMIN function
 }
 
 
 void MainWindow::on_pushButton_memberAddDelete_clicked()
 {
-
+    // ADMIN function
 }
 
 
 void MainWindow::on_pushButton_memberRebateDisplay_clicked()
 {
-
+    // manager function
 }
 
 
 void MainWindow::on_pushButton_memberExpSearch_clicked()
 {
-
+    // manager function
 }
 
 
 void MainWindow::on_pushButton_inventorySearch_clicked()
 {
-
+    // manager function
 }
 
