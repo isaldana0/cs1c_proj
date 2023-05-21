@@ -29,8 +29,8 @@
    <widget class="QLabel" name="taco">
     <property name="geometry">
      <rect>
-      <x>870</x>
-      <y>140</y>
+      <x>860</x>
+      <y>30</y>
       <width>401</width>
       <height>371</height>
      </rect>
@@ -39,7 +39,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>:/image/D:/School/CS-1C/GroupProject/cs1c_proj/bulkClub/tacoFlying.gif</pixmap>
+     <pixmap resource="image.qrc">:/images/tacoFlying.gif</pixmap>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_memberShoppingData">
@@ -115,7 +115,7 @@
       <x>310</x>
       <y>20</y>
       <width>531</width>
-      <height>641</height>
+      <height>931</height>
      </rect>
     </property>
    </widget>
@@ -191,19 +191,6 @@
     </property>
     <property name="text">
      <string>Display</string>
-    </property>
-   </widget>
-   <widget class="QScrollBar" name="verticalScrollBar">
-    <property name="geometry">
-     <rect>
-      <x>850</x>
-      <y>30</y>
-      <width>20</width>
-      <height>621</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
     </property>
    </widget>
    <widget class="QLabel" name="label_totalRevenueTax">
@@ -585,6 +572,72 @@
      <string>Add/Delete</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_inventorySearch">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>800</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Inventory Search</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_inventorySearchDate">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>850</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Date:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_inventorySearch">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>840</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_inventorySearch">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>880</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -598,6 +651,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>
