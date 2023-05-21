@@ -17,16 +17,13 @@ public:
 
 private slots:
     void on_pushButton_searchSalesReport_clicked();
-
     void on_pushButton_salesReportMemberTypeDisplay_clicked();
-
     void on_pushButton_itemSold_clicked();
-
     void on_pushButton_totalRevenueTax_clicked();
-
     void on_pushButton_memberShoppingDataSearch_clicked();
-
     void on_pushButton_memberType_clicked();
+    void on_pushButton_itemAddDelete_clicked();
+    void on_pushButton_memberAddDelete_clicked();
 
 private:
     Ui::MainWindow *ui;

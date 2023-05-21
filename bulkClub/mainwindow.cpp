@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setWindowTitle("Bulky Club");
+    setWindowTitle("Bulky Club 2023");
     //taco gif
     QMovie *movie = new QMovie(":/images/tacoFlying.gif");
     ui->taco->setMovie(movie);
@@ -52,6 +52,18 @@ void MainWindow::on_pushButton_memberShoppingDataSearch_clicked()
 
 
 void MainWindow::on_pushButton_memberType_clicked()
+{
+
+}
+
+
+void MainWindow::on_pushButton_itemAddDelete_clicked()
+{
+
+}
+
+
+void MainWindow::on_pushButton_memberAddDelete_clicked()
 {
 
 }
