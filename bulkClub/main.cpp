@@ -57,7 +57,6 @@ void TestRequirements(DataWarehouse& storage)
     int memberId = storage.GetMemberIdByName("Test Member");
     storage.DeleteMember(memberId);
 
-
     // Requirement 8
     Transaction*     t = new Transaction(QDate::fromString("11/11/21", "M/d/yyyy"), 12345, "Coke", 1.50, 1);
     storage.MakePurchase(t);
