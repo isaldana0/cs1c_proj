@@ -7,8 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>720</height>
+    <height>1000</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <stylestrategy>PreferAntialias</stylestrategy>
+   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -27,7 +32,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="C:/Users/Gerald/Documents/Qt/loginWindow_2/loginWindow/images.qrc">:/image/D:/School/CS-1C/GroupProject/cs1c_proj/bulkClub/tacoFlying.gif</pixmap>
+     <pixmap>:/image/D:/School/CS-1C/GroupProject/cs1c_proj/bulkClub/tacoFlying.gif</pixmap>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_memberShoppingData">
@@ -53,6 +58,7 @@
      <font>
       <pointsize>14</pointsize>
       <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -72,6 +78,7 @@
      <font>
       <pointsize>15</pointsize>
       <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -91,6 +98,7 @@
      <font>
       <pointsize>15</pointsize>
       <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -103,7 +111,7 @@
       <x>310</x>
       <y>20</y>
       <width>531</width>
-      <height>641</height>
+      <height>931</height>
      </rect>
     </property>
    </widget>
@@ -120,6 +128,7 @@
      <font>
       <pointsize>14</pointsize>
       <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -139,6 +148,7 @@
      <font>
       <pointsize>15</pointsize>
       <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -157,6 +167,7 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -175,23 +186,11 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
      <string>Display</string>
-    </property>
-   </widget>
-   <widget class="QScrollBar" name="verticalScrollBar">
-    <property name="geometry">
-     <rect>
-      <x>850</x>
-      <y>30</y>
-      <width>20</width>
-      <height>621</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
     </property>
    </widget>
    <widget class="QLabel" name="label_totalRevenueTax">
@@ -207,6 +206,7 @@
      <font>
       <pointsize>15</pointsize>
       <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -225,6 +225,7 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -243,6 +244,7 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -262,6 +264,7 @@
      <font>
       <pointsize>12</pointsize>
       <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -280,6 +283,7 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -298,6 +302,7 @@
     <property name="font">
      <font>
       <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -316,6 +321,7 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
    </widget>
@@ -332,6 +338,7 @@
      <font>
       <pointsize>15</pointsize>
       <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -350,6 +357,7 @@
     <property name="font">
      <font>
       <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
@@ -369,10 +377,288 @@
      <font>
       <pointsize>15</pointsize>
       <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="text">
      <string>Member Type (QTY)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>510</y>
+      <width>381</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Administrator Panel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_memberRebate">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>600</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Member Rebate</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_memberRebate">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>640</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Display</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_memberExp">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>690</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Member Expiration</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_memberExpDate">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>720</y>
+      <width>49</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Date:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_memberExpDate">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>730</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_memberExpSearch">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>770</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_memberAddDelete">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>590</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Add/Delete</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_memberAddDelete">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>590</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Member: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_itemAddDelete">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>650</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Item:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_itemAddDelete">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>650</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Add/Delete</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_inventorySearch">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>810</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Inventory Search</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_productName">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>850</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Product Name:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_productName">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>850</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_productNameSearch">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>890</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>Search</string>
     </property>
    </widget>
   </widget>
@@ -388,8 +674,6 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="C:/Users/Gerald/Documents/Qt/loginWindow_2/loginWindow/images.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

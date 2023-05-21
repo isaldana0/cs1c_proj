@@ -1,6 +1,6 @@
 #include <QApplication>
 #include "login.h"
-#include "datawarehouse.h"
+//#include "datawarehouse.h"
 
 int main(int argc, char *argv[])
 {
