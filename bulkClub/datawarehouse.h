@@ -12,8 +12,6 @@
 #include <QResource>
 #include <QTextStream>
 #include <QRegularExpression>
-#include <QDir>
-#include <QDirIterator>
 
 class DataWarehouse
 {
@@ -23,7 +21,8 @@ private:
     vector<Item> Inventory;
 
     void LoadMembers();
-    void LoadTransactionsAndInventory();
+    void LoadTransactions();
+    void LoadInventory();
 
 public:
     DataWarehouse();
@@ -35,7 +34,7 @@ public:
     QString GetPurchasesAllMembers();
     QString GetItemQuantities();
     QString GetExecutiveRebates();
-    QString GetMembershipExpirations(QDate month);
+    QString GetMembershipExpirations(int month, int year);
     void AddMember(Member* m);
     void DeleteMember(int memberId);
     void MakePurchase(Transaction* t);
@@ -46,6 +45,8 @@ public:
     int GetMemberIdByName(QString memberName);
     QString GetMemberPurchases(int memberId);
     bool ShouldBeExecutive (int memberId);
-    bool ShouldBeRegularMember(int memberId);
+    double GetMemberRebate(int memberId);
+    QString GeConvertToExecutiveRecommendations();
+    QString GeConvertToRegularRecommendations();
 };
 #endif // DATAWAREHOUSE_H

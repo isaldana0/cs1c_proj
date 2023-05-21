@@ -18,7 +18,7 @@ struct TransactionDateComparator
 DataWarehouse::DataWarehouse()
 {
     qDebug() << "data\n";
-/*
+
     // start of temp code for testing until LoadTransactions is implemented
     Transaction* t = new Transaction(QDate(2011,1,1), 1, "hello", 1, 1);
     Transactions.push_back(t);
@@ -29,119 +29,22 @@ DataWarehouse::DataWarehouse()
     t = new Transaction(QDate(2009,1,1), 1, "hello", 1, 1);
     Transactions.push_back(t);
     // end of temp code for testing until LoadTransactions is implemented
-*/
+
     LoadMembers();
-    LoadTransactionsAndInventory();
+    LoadTransactions();
+    //LoadInventory(); // todo: uncomment once this method is implemented.
 
     sortData();
 }
 
 void DataWarehouse::LoadMembers()
 {
-    QFile file(":/members/warehouseShoppers.txt");
-
-    if(!file.exists()){
-        qDebug() << "Could not find warehouseShoppers.txt\n";
-    }
-    if(!file.open(QIODevice::OpenModeFlag::ReadOnly)) {
-        qDebug() << "Could not open warehouseShoppers.txt" << "\n";
-        return;
-    } else {
-        QTextStream stream(&file);
-        while (!stream.atEnd()) {
-            Member newMember;
-            QString line = stream.readLine();
-            newMember.name = line;
-            line = stream.readLine();
-            newMember.id = line.toInt();
-            line = stream.readLine();
-            if (line == "Executive") {
-                newMember.isExecutive = true;
-            } else {
-                newMember.isExecutive = false;
-            }
-            line = stream.readLine();
-            QDate expDate = QDate::fromString(line, "MM/dd/yyyy");
-            newMember.expirationDate = expDate;
-            Members.push_back(newMember);
-        }
-
-        file.close();
-    }
+    // Todo: populate members collection from "warehouse shoppers.txt"
 }
 
-void DataWarehouse::LoadTransactionsAndInventory()
+void DataWarehouse::LoadTransactions()
 {
-
-    QString directoryPath = ":/transactions/transactions";
-    QDirIterator it(directoryPath, QDir::Files | QDir::NoDotAndDotDot);
-    while (it.hasNext()) {
-        QString filePath = it.next();
-        QFile file(filePath);
-        if(!file.exists()){
-            qDebug() << "could not find " << filePath << '\n';
-        }
-        if(!file.open(QIODevice::OpenModeFlag::ReadOnly)) {
-            qDebug() << "Could not open " << filePath << "\n";
-            return;
-        } else {
-            QTextStream stream(&file);
-            while (!stream.atEnd()) {
-
-                //get all the data
-                QString transDateStr = stream.readLine(); //Transaction Date
-
-                //make sure the data is formatted correctly
-                QDate transDate = QDate::fromString(transDateStr, "M/d/yyyy");
-                if (!transDate.isValid()) {
-                    transDate = QDate::fromString(transDateStr, "MM/dd/yy");
-                }
-
-                QString id = stream.readLine(); //member id
-
-                QString product = stream.readLine(); //item description
-
-                double price = stream.readLine().toDouble(); //item price
-
-                int quantity = stream.readLine().toInt(); // item quantity
-
-                //updating itemVector
-                bool found = false;
-                for (Item& item : Inventory) {
-                    if (item.product == product) {
-                        item.numSold += quantity;
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
-                    Item newItem;
-                    newItem.product = product;
-                    newItem.price = price;
-                    newItem.isDeleted = false;
-                    newItem.numSold = quantity;
-                    Inventory.push_back(newItem);
-                }
-
-
-
-                //create a new transaction and add the data
-                Transaction* newTransaction = new Transaction;
-                newTransaction->date = transDate;
-                newTransaction->customerId = id.toInt();
-                newTransaction->productDescription = product;
-                newTransaction->price = price;
-                newTransaction->quantity = quantity;
-
-                //Add pointer to transaction to transactionVector
-                Transactions.push_back(newTransaction);
-
-            }
-
-            file.close();
-        }
-
-    }
+    // Todo: populate transactions collection from "day1.txt", "day2.txt", ...
 }
 
 void DataWarehouse::sortData()
@@ -403,10 +306,117 @@ QString DataWarehouse::GetExecutiveRebates()
     Executive members sorted by membership number. Rebates are
     based on purchases before tax.
     */
-    return "Not done yet..."; // temporary for stub
+
+    QString report = QString("Executive Member Rebates: \n");
+
+    // todo: sort by membership number
+
+    for (auto it = Members.begin(); it != Members.end(); it++)
+    {
+        auto customer = *it;
+        if(!customer.isExecutive)
+        {
+            continue;
+        }
+
+        report += customer.name + ": " + QString::number(GetMemberRebate(customer.id)) +"\n";
+    }
+
+    return report;
 }
 
-QString DataWarehouse::GetMembershipExpirations(QDate month)
+QString DataWarehouse::GeConvertToExecutiveRecommendations()
+{
+    int total = 0;
+    QString report = QString("Regular Members who should convert to Executive: \n");
+
+    // todo: sort
+
+    for (auto it = Members.begin(); it != Members.end(); it++)
+    {
+        auto customer = *it;
+        if(customer.isExecutive)
+        {
+            continue;
+        }
+
+        if(ShouldBeExecutive(customer.id))
+        {
+            report += customer.name + "\n";
+        }
+    }
+
+    report += "\nTotal" + QString::number(total);
+
+    return report;
+}
+
+QString DataWarehouse::GeConvertToRegularRecommendations()
+{
+    int total = 0;
+    QString report = QString("Executive Members who should convert to Regular: \n");
+
+    // todo: sort
+
+    for (auto it = Members.begin(); it != Members.end(); it++)
+    {
+        auto customer = *it;
+        if(!customer.isExecutive)
+        {
+            continue;
+        }
+
+        if(!ShouldBeExecutive(customer.id))
+        {
+            report += customer.name + "\n";
+        }
+    }
+
+    report += "\nTotal: " + QString::number(total);
+
+    return report;
+}
+
+bool DataWarehouse::ShouldBeExecutive (int memberId)
+{
+    double priceDifference = 120 - 65; // exec membership is $120, regular is $65
+    if (GetMemberRebate(memberId) > priceDifference)
+    {
+        return true;
+    }
+    return false;
+}
+
+double DataWarehouse::GetMemberRebate(int memberId)
+{
+    double totalAmountSpent = 0;
+    double rebate = 0;
+
+    for (auto it = Members.begin(); it != Members.end(); it++)
+    {
+        auto customer = *it;
+
+        if(customer.id != memberId)
+        {
+            continue;
+        }
+
+        for (auto it = Transactions.begin(); it != Transactions.end(); it++)
+        {
+            Transaction* transaction = *it;
+            if(transaction->customerId != customer.id)
+            {
+                continue;
+            }
+
+            totalAmountSpent += transaction->quantity * transaction->price;
+        }
+    }
+
+    return totalAmountSpent * 0.02;
+}
+
+QString DataWarehouse::GetMembershipExpirations(int month, int year)
 {
     // Todo: Write a method to fulfill the following requirement:
     /*
@@ -414,7 +424,21 @@ QString DataWarehouse::GetMembershipExpirations(QDate month)
     display of all members whose memberships expire that month as
     well as the cost to renew their memberships.
     */
-    return "Not done yet..."; // temporary for stub
+
+    QString report = QString("Memberships expiring in " + QString::number(month) +"/" + QString::number(year) + ":\n");
+
+    for (auto it = Members.begin(); it != Members.end(); it++)
+    {
+        auto customer = *it;
+
+        if(customer.expirationDate.month() == month && customer.expirationDate.year() == year)
+        {
+            QString renewalCost = customer.isExecutive ? "$120" : "$65";
+            report += customer.name + ", Renewal cost: " + renewalCost +"\n";
+        }
+    }
+
+    return report;
 }
 
 void DataWarehouse::AddMember(Member* m)
@@ -539,23 +563,4 @@ QString DataWarehouse::GetMemberPurchases(int memberId)
     }
 
     return "\nTotal Purchases (including tax): " + QString::number(customerTotal * 1.0775);
-}
-
-bool DataWarehouse::ShouldBeExecutive (int memberId)
-{
-    /*
-    Your program should be able to determine if any Regular customer
-    should convert their membership to Executive status using the given
-    sales data. Display the number of recommended conversions.
-    */
-    // Todo: find transactions for the customer and do calculations.
-    // NOTE: we will also need a function to display the number of recommended conversions.
-    return false; // temporary for stub
-}
-
-bool DataWarehouse::ShouldBeRegularMember(int memberId)
-{
-    // Note, this is for requirement 13. Once ShouldBeExecutive works, this
-    // should work. as with that method, we will also need one to display totals.
-    return !ShouldBeExecutive(memberId);
 }
