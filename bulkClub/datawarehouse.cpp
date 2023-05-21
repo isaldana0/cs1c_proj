@@ -129,6 +129,7 @@ void DataWarehouse::LoadTransactionsAndInventory()
         }
 
     }
+  
     sortInventory();
     sortMembers();
 }
@@ -160,8 +161,8 @@ void DataWarehouse::sortInventory()
     }
 
     // qDebug() << "sorted\n";
-}
 
+}
 
 void DataWarehouse::sortMembers()
 {
