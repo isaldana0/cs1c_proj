@@ -7,8 +7,20 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>720</height>
+    <height>1000</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1280</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1280</width>
+    <height>1000</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -17,8 +29,8 @@
    <widget class="QLabel" name="taco">
     <property name="geometry">
      <rect>
-      <x>870</x>
-      <y>140</y>
+      <x>860</x>
+      <y>30</y>
       <width>401</width>
       <height>371</height>
      </rect>
@@ -27,14 +39,14 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="C:/Users/Gerald/Documents/Qt/loginWindow_2/loginWindow/images.qrc">:/image/D:/School/CS-1C/GroupProject/cs1c_proj/bulkClub/tacoFlying.gif</pixmap>
+     <pixmap resource="image.qrc">:/images/tacoFlying.gif</pixmap>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_memberShoppingData">
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>430</y>
+      <y>380</y>
       <width>150</width>
       <height>30</height>
      </rect>
@@ -44,7 +56,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>440</y>
+      <y>380</y>
       <width>49</width>
       <height>16</height>
      </rect>
@@ -63,7 +75,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>120</y>
+      <y>110</y>
       <width>291</width>
       <height>31</height>
      </rect>
@@ -82,7 +94,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>390</y>
+      <y>340</y>
       <width>251</width>
       <height>41</height>
      </rect>
@@ -103,7 +115,7 @@
       <x>310</x>
       <y>20</y>
       <width>531</width>
-      <height>641</height>
+      <height>831</height>
      </rect>
     </property>
    </widget>
@@ -149,7 +161,7 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>460</y>
+      <y>410</y>
       <width>80</width>
       <height>30</height>
      </rect>
@@ -167,7 +179,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>340</y>
+      <y>300</y>
       <width>80</width>
       <height>30</height>
      </rect>
@@ -181,24 +193,11 @@
      <string>Display</string>
     </property>
    </widget>
-   <widget class="QScrollBar" name="verticalScrollBar">
-    <property name="geometry">
-     <rect>
-      <x>850</x>
-      <y>30</y>
-      <width>20</width>
-      <height>621</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_totalRevenueTax">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>310</y>
+      <y>270</y>
       <width>231</width>
       <height>31</height>
      </rect>
@@ -217,7 +216,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>550</y>
+      <y>490</y>
       <width>80</width>
       <height>30</height>
      </rect>
@@ -235,7 +234,7 @@
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>160</y>
+      <y>150</y>
       <width>80</width>
       <height>30</height>
      </rect>
@@ -253,7 +252,7 @@
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>80</y>
+      <y>70</y>
       <width>80</width>
       <height>30</height>
      </rect>
@@ -272,7 +271,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>270</y>
+      <y>230</y>
       <width>80</width>
       <height>30</height>
      </rect>
@@ -290,7 +289,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>180</y>
+      <y>170</y>
       <width>89</width>
       <height>20</height>
      </rect>
@@ -323,7 +322,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>240</y>
+      <y>200</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -342,7 +341,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>160</y>
+      <y>150</y>
       <width>89</width>
       <height>20</height>
      </rect>
@@ -360,7 +359,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>510</y>
+      <y>450</y>
       <width>251</width>
       <height>41</height>
      </rect>
@@ -373,6 +372,308 @@
     </property>
     <property name="text">
      <string>Member Type (QTY)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_memberRebate">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>530</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Member Rebate</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_memberRebateDisplay">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>570</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Display</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_memberExp">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>610</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Member Expiration</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_memberExpDate">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>650</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Date:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_membeExpSearch">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>650</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_memberExpSearch">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>680</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_adminPanel">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>440</y>
+      <width>391</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Administrator Panel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_memberAddDelete">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>510</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Member:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_memberAddDelete">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>510</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Add/Delete</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_itemAddDelete">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>580</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Item(s):</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_itemAddDelete">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>580</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Add/Delete</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_memberExp_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>720</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Inventory Search</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_inventorySearchDate">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>760</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Date:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_inventorySearch">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>760</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_inventorySearch">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>790</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_memberSearch">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>830</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Member Search</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_memberSearch">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>870</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Search</string>
     </property>
    </widget>
   </widget>
@@ -389,7 +690,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="C:/Users/Gerald/Documents/Qt/loginWindow_2/loginWindow/images.qrc"/>
+  <include location="image.qrc"/>
  </resources>
  <connections/>
 </ui>
