@@ -225,7 +225,6 @@ void MainWindow::on_pushButton_memberAddDelete_clicked()
 ////////////////////////////////////////////////////////////////////////////////////////
 // Display executive sales report
 // input: yyyy-MM-dd
-
 void MainWindow::on_pushButton_salesReportExecutive_clicked()
 {
     // getting date
