@@ -4,6 +4,7 @@
 #include "ChangeItemPriceDialog.h""
 #include "DeleteMemberDialog.h"
 #include "AddMemberDialog.h"
+#include "DeleteMemberDialog.h"
 #include "qboxlayout.h"
 #include "ui_mainwindow.h"
 #include "QLabel"
@@ -416,6 +417,7 @@ void MainWindow::on_pushButton_changeItemPrice_clicked()
 
     // Set dialog properties or configure it as needed
     dialog.setWindowTitle("Change Item Price");
+
     dialog.setMinimumSize(200, 100);
 
     // Create a layout for the dialog
