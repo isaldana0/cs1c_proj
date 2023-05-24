@@ -224,7 +224,7 @@ void MainWindow::on_pushButton_memberAddDelete_clicked()
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // Display executive sales report
-// input: none
+// input: yyyy-MM-dd
 
 void MainWindow::on_pushButton_salesReportExecutive_clicked()
 {
@@ -254,7 +254,7 @@ void MainWindow::setupExecutiveSalesTable()
     // set table model to existing tableView
     ui->tableView->setModel(tableModel);
 
-    // Adjust the coumn width to fit stuff
+    // Adjust the column width to fit stuff
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 }
 
@@ -287,10 +287,63 @@ void MainWindow::populateExecutiveSalesTable(const QStringList& data)
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // Display regular sales report
-// input: none
+// input: yyyy-MM-dd
 void MainWindow::on_pushButton_salesReportRegular_clicked()
 {
+    //getting date
+    QDate date = QDate::fromString(ui->lineEdit_salesReportRegularDate->text(),"yyyy-MM-dd");
 
+    // call function from datawarehouse to get sales report for regular memebers
+    QString salesReportRg = storage.GetSalesReportForDate(date,REPORT_REGULAR_ONLY);
+
+    //split data
+    QStringList rows = salesReportRg.split('\n', Qt::SkipEmptyParts);
+
+    // call populate function to display data on tableView
+    populateRegularSalesTable(rows);
+}
+
+void MainWindow::setupRegularSalesTable()
+{
+    //create table for model
+    tableModel = new QStandardItemModel(this);
+
+    //set column count and header label
+    int colCount = 1;
+    tableModel->setColumnCount(colCount);
+    tableModel->setHorizontalHeaderLabels({"Search Results"});
+
+    // set table to existing tableView
+    ui->tableView->setModel(tableModel);
+
+    // auto adjust column width
+    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+}
+
+void MainWindow::populateRegularSalesTable(const QStringList& data)
+{
+    // clear table
+    tableModel->removeRows(0,tableModel->rowCount());
+
+    // set row and column count
+    int numRows = data.size();
+    int numCols = 1;
+
+    // set row and column count
+    tableModel->setRowCount(numRows);
+    tableModel->setColumnCount(numCols);
+
+    // populate table
+    for (int row = 0; row < numRows; ++row)
+    {
+        tableModel->setData(tableModel->index(row, 0), data[row].trimmed());
+    }
+
+    // Expand the height of the rows
+    for (int row = 0; row < numRows; ++row)
+    {
+        ui->tableView->setRowHeight(row, 100); // Set the desired height in pixels
+    }
 }
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -556,7 +609,6 @@ void MainWindow::setupTableModelMemberSearch()
     // Adjust the column widths to fit the contents
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 }
-
 
 void MainWindow::populateTable(const QVector<QString>& data)
 {
