@@ -37,6 +37,7 @@ MainWindow::MainWindow(EmployeeType role, QWidget *parent)
         ui->pushButton_memberExpSearch->setEnabled(true);
         ui->pushButton_inventorySearch->setEnabled(true);
         ui->pushButton_memberSearch->setEnabled(true);
+        ui->pushButton_memberConversionExecutive->setEnabled(true);
     }
     else {
         //disable admin-specific GUI elements
@@ -54,6 +55,7 @@ MainWindow::MainWindow(EmployeeType role, QWidget *parent)
         ui->pushButton_memberExpSearch->setEnabled(true);
         ui->pushButton_inventorySearch->setEnabled(true);
         ui->pushButton_memberSearch->setEnabled(true);
+        ui->pushButton_memberConversionExecutive->setEnabled(false);
     }
 
     // Connect the search button clicked signal to the slot
@@ -255,6 +257,17 @@ void MainWindow::populateTotalRevenue(const QStringList& data)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+// Executive Member Conversion
+// input: none
+void MainWindow::on_pushButton_memberConversionExecutive_clicked()
+{
+
+}
+////////////////////////////////////////////////////////////////////////////////////////
+
 
 void MainWindow::on_pushButton_memberShoppingDataSearch_clicked()
 {
@@ -752,39 +765,3 @@ void MainWindow::populateTable(const QVector<QString>& data)
 ////////////////////////////////////////////////////////////////////////////////////////
 
 
-//void MainWindow::on_pushButton_memberType_clicked()
-//{
-    // cannt delete this function. will get complie errors
-//}
-
-//void MainWindow::on_pushButton_salesReportMemberTypeDisplay_clicked()
-//{
-    // No idea why I can't delete this function. Will get a compile error if I remove it.
-    // gui element has been deleted already.
-    /*   << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢛⣋⣭⣴⣶⣾⣿⣿⣷⣶⣶⣬⣙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⡿⢋⣩⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⠟⣩⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⡿⢡⣾⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⠏⣰⣿⣿⣿⣿⠟⣩⣴⣶⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⢿⣟⣿⡏\n"
-         << "⡟⣰⣿⣿⣿⡿⢡⣾⡿⢛⣩⣴⣾⣿⣿⠿⠟⢛⣛⣻⣿⣿⣿⣿⣿⣿⣿⡏⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢋⣩⣤⣶⣶⣿⣿⣿⣿⣿⣿⡇\n"
-         << "⠃⣿⣿⣿⣿⣷⡿⢋⣴⣿⡿⠟⣫⣥⣶⠾⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢋⣴\n"
-         << "⣿⣿⣿⣿⣿⣡⣿⠿⣫⣴⣿⣿⡟⣡⣾⣿⣷⣦⡙⢿⣿⣿⣿⣿⡿⢁⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⢡⣾⣿⣿⣿⣿⣿⣿⣿⣿⠿⢋⣥⣾⣿\n"
-         << "⡆⢻⣿⣿⣿⣿⣿⠋⣴⣿⡿⣿⣿⠀⣿⣿⣿⢿⣿⣿⣆⠻⣿⣿⠙⣡⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⣩⣴⣿⣾⣿⣿⣿⣿⣿⡿⠟⣋⣥⣾⣿⣿⣿⣿\n"
-         << "⣷⡘⣿⣿⣿⣿⡇⣼⣿⢁⣴⣶⣶⣄⠘⣿⡇⠀⢻⣿⣿⣆⢹⣿⡷⠈⣛⣭⣭⣭⣙⠻⣿⣿⣿⣿⣿⣿⣿⣿⠟⣋⣴⣾⣿⣿⠿⢛⣩⣴⣶⣤⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣷⡘⢿⣿⣿⣿⣿⡇⢸⣿⣿⢿⣿⣦⠹⣿⡄⠀⠙⠻⢿⡆⣿⣷⡿⠟⣋⣭⣭⣭⣁⡙⠿⠿⢿⡿⢟⣩⣴⣾⣿⠿⢛⣭⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣦⣉⠻⠿⠿⠷⠘⢿⡅⠀⠙⣿⡇⢈⠻⢦⣠⡾⠋⣰⠟⣉⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⢸⠿⢛⣩⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡈⢿⣆⡀⠈⠀⣿⣷⣶⣄⠲⠎⣡⣾⡟⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢛⣡⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠍⣛⠒⠀⣿⣿⡿⢋⣴⣾⡿⠋⠐⠆⣙⣛⣛⣛⣛⣋⣭⠰⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢁⣾⣿⡿⠀⠿⢁⣴⣿⣿⠟⣡⣄⠻⣆⠹⣿⣿⣿⣿⠟⢋⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⣿⡿⣫⡶⢃⣴⣿⣿⡿⢋⣴⣿⣿⣆⢑⠀⣤⡙⢩⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠻⠾⠋⣴⣿⣿⣿⠟⣰⣿⣿⣿⣿⡿⢨⣷⣿⣿⣦⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢂⣾⣿⣿⣿⠏⠘⠿⣿⣿⡿⠟⣀⣾⣿⣿⣿⣿⣷⡈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⣿⣿⣿⠟⣁⣾⣿⠶⣂⣤⣶⡌⢿⣿⣿⣿⣿⣿⣿⣗⡈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣈⣉⣐⣚⣫⣭⣶⣾⣿⣿⣿⣷⢸⣿⣿⣿⣿⣿⣿⣿⣷⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⣿⡆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⣾⣿⣿⣿⣿⣿⣿⣿⣿⣧⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣸⣿⡿⠿⠿⠛⠛⠿⠿⢿⣿⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-         << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⣩⣵⣶⣿⣿⣿⣿⣿⣿⣶⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n" */
-
-//}
