@@ -141,7 +141,7 @@
      <rect>
       <x>10</x>
       <y>360</y>
-      <width>231</width>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>
@@ -152,7 +152,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Total Revenue (inc. tax)</string>
+     <string>Total Revenue</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_salesReportExecutive">
@@ -807,7 +807,7 @@
      <x>0</x>
      <y>0</y>
      <width>999</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
